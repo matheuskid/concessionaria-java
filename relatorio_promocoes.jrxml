@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_promocoes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05b67511-2477-4018-a563-e494a7c015ce">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dGJsX3Byb21vY2FvIEFTICwxMjIsMTU2LDEwN2E4ZWJkLTM1NGMtNDczOS04OGNkLTM5MjJhMjJkYTZhMDs"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conect_teste"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_promocao.desconto,
+	tbl_promocao.data_exp,
+	tbl_promocao.id_prom
+FROM tbl_promocao]]>
+	</queryString>
+	<field name="desconto" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="desconto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_promocao"/>
+	</field>
+	<field name="data_exp" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data_exp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_promocao"/>
+	</field>
+	<field name="id_prom" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_prom"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_promocao"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="24" width="129" height="30" uuid="210c2ff2-b996-49ac-92c2-a99699db45e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Relatório de Promoções]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="52a314a6-c271-4113-96a4-18dddbdfb847">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb393f8b-a814-4eb6-b035-8fdecc5ab2f7"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="113" height="30" uuid="a95c9164-2bd0-40d3-8285-b8f9a60927b2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c898b3c0-d6d6-4dbf-9d65-954df1a677b1"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Data de Expiramento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="30" uuid="3e6da5e7-5878-4222-a68f-1be7ddef2e5f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62e48cf4-c130-4e65-be0d-12cb4022e041"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Desconto]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="70" width="559" height="1" uuid="4124fea7-1fe0-4c6a-9528-06439af7bf00"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="2177824a-b68a-4cd3-a7e6-211899fd2011">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb393f8b-a814-4eb6-b035-8fdecc5ab2f7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id_prom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="113" height="30" uuid="65d6e3e9-dddf-43c7-97e8-dd2e0e440497">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c898b3c0-d6d6-4dbf-9d65-954df1a677b1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{data_exp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="30" uuid="6eec8d0a-b111-4a35-b833-60624ac1ddd9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62e48cf4-c130-4e65-be0d-12cb4022e041"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{desconto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

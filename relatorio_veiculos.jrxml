@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_veiculos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf4f8542-c8af-4580-afab-b66132ec0c2f">
+	<property name="com.jaspersoft.studio.data.sql.tables"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Conect_teste"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tbl_veiculo.modelo,
+	tbl_veiculo.fabricante,
+	tbl_veiculo.chassi,
+	tbl_veiculo.cor,
+	tbl_veiculo.ano,
+	tbl_veiculo.preco
+FROM tbl_veiculo]]>
+	</queryString>
+	<field name="modelo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="modelo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<field name="fabricante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fabricante"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<field name="chassi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chassi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<field name="cor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<field name="ano" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<field name="preco" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="preco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbl_veiculo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="30" width="118" height="30" uuid="1b7db014-6375-442e-908c-86ff864c5e91"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Relatório de Veiculos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="30" uuid="a6a18afb-317b-4094-bb4f-7efb4d199911">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fcced3c4-dec1-41ae-9c40-82d3cf241841"/>
+				</reportElement>
+				<text><![CDATA[chassi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="0" width="90" height="30" uuid="920eaac1-27c5-4285-ac92-e5510c520fbd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="460acef6-f3b5-4a65-a3ae-b427d94d0e80"/>
+				</reportElement>
+				<text><![CDATA[modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="90" height="30" uuid="ef0b26a0-e394-45ae-b81e-e11dc1689757">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b07a00-3540-4dd5-b096-96b891751e74"/>
+				</reportElement>
+				<text><![CDATA[fabricante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="60" height="30" uuid="b1d01cd3-a5cb-4910-85c0-d2dfe24652d3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1645f7af-7e6d-407f-a697-873be95acddb"/>
+				</reportElement>
+				<text><![CDATA[cor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="90" height="30" uuid="5a07c796-2576-4100-aafa-ff84e6029018">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a4e14b3-115e-4c17-9fc8-4933e9144cc6"/>
+				</reportElement>
+				<text><![CDATA[ano]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="90" height="30" uuid="2ef74976-c7fb-4c4d-a7c6-8aa136bac014">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f9a9a346-e405-4fb7-80cd-d6ee7cb3bd51"/>
+				</reportElement>
+				<text><![CDATA[preco]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="80" height="30" uuid="b997a55d-8af9-4a81-9db3-788f8baced41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fcced3c4-dec1-41ae-9c40-82d3cf241841"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{chassi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="20" width="90" height="30" uuid="33b6d3dd-6cc3-43f7-8d8d-c223bd87d47c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="460acef6-f3b5-4a65-a3ae-b427d94d0e80"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="20" width="90" height="30" uuid="e14fd490-588c-432a-a1e1-df1b522be38f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b07a00-3540-4dd5-b096-96b891751e74"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fabricante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="20" width="60" height="30" uuid="779d6d14-5cbf-4c6b-a47e-d7872300c204">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1645f7af-7e6d-407f-a697-873be95acddb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="20" width="90" height="30" uuid="0b4a3b2e-ceb1-4993-8192-f367ae0d292c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7a4e14b3-115e-4c17-9fc8-4933e9144cc6"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="20" width="90" height="30" uuid="69f858d7-b31a-4b8c-b217-900fa0fd4d48">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f9a9a346-e405-4fb7-80cd-d6ee7cb3bd51"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-14" y="0" width="574" height="1" uuid="1c170e60-49e9-465b-9b89-c111e17e6b93"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

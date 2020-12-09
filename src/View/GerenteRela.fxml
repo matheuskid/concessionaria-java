@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="602.0" prefWidth="972.0" stylesheets="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/estilo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controler.GerenteRelaController">
+   <children>
+      <MenuBar layoutY="-5.0" prefHeight="27.0" prefWidth="973.0" />
+      <SplitPane layoutX="-1.0" layoutY="37.0" prefHeight="565.0" prefWidth="155.0">
+         <items>
+            <Pane prefHeight="591.0" prefWidth="155.0">
+               <children>
+                  <Button fx:id="tela_veiculos1" alignment="CENTER" contentDisplay="TOP" layoutX="-9.0" layoutY="-5.0" mnemonicParsing="false" onAction="#tela_veiculos" pickOnBounds="false" prefHeight="123.0" prefWidth="164.0" text="Veiculos">
+                     <graphic>
+                        <ImageView fitHeight="74.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/PngItem_2102230.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="tela_func1" alignment="CENTER" contentDisplay="TOP" layoutX="-9.0" layoutY="124.0" mnemonicParsing="false" onAction="#tela_funcs" pickOnBounds="false" prefHeight="123.0" prefWidth="164.0" text="Funcionarios">
+                     <graphic>
+                        <ImageView fitHeight="86.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/man-in-suit-and-tie.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="tela_prom1" alignment="CENTER" contentDisplay="TOP" layoutX="-4.0" layoutY="254.0" mnemonicParsing="false" onAction="#tela_proms" pickOnBounds="false" prefHeight="123.0" prefWidth="164.0" text="Promoções">
+                     <graphic>
+                        <ImageView fitHeight="86.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/discount.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </items>
+      </SplitPane>
+      <GridPane alignment="TOP_RIGHT" layoutX="262.0" layoutY="98.0" prefHeight="432.0" prefWidth="701.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="clientes_rela" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rela_clientes" pickOnBounds="false" prefHeight="123.0" prefWidth="272.0" text="Clientes">
+               <graphic>
+                  <ImageView fitHeight="86.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/toppng.com-white-person-icon-man-icon-white-600x568.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="veiculos_rela" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rela_veiculos" pickOnBounds="false" prefHeight="123.0" prefWidth="272.0" text="Veiculos" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="74.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/PngItem_2102230.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="prom_rela" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rela_proms" pickOnBounds="false" prefHeight="123.0" prefWidth="272.0" text="Promoções" GridPane.columnIndex="1">
+               <graphic>
+                  <ImageView fitHeight="86.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/discount.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="venda_rela" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#rela_vendas" pickOnBounds="false" prefHeight="123.0" prefWidth="272.0" text="Vendas" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fitHeight="74.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="file:/C:/Users/mathe/Documents/Concessionaria%20-%20BD/Desktop/Concessionaria/css/money-bag-512.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="262.0" layoutY="77.0" text="Selecione uma opção de relatório abaixo" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,116 @@
+CREATE TABLE IF NOT EXISTS public.tbl_funcionario (
+  id_fun SERIAL NOT NULL,
+  nome VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  telefone VARCHAR(45) NOT NULL,
+  CPF VARCHAR(45) NOT NULL,
+  rg VARCHAR(45) NOT NULL,
+  cidade VARCHAR(45) NOT NULL,
+  estado VARCHAR(45) NOT NULL,
+  login VARCHAR(45) NOT NULL,
+  senha VARCHAR(45) NOT NULL,
+  funcao VARCHAR(45) NOT NULL,
+  numeroPIS VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_fun));
+
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_cliente (
+  id_cliente SERIAL NOT NULL,
+  cod_login INT NOT NULL,
+  nome VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  telefone VARCHAR(45) NOT NULL,
+  cidade VARCHAR(45) NOT NULL,
+  estado VARCHAR(45) NOT NULL,
+  CNH VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_cliente));
+
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_promocao (
+  id_prom SERIAL NOT NULL,
+  desconto FLOAT NOT NULL,
+  data_exp DATE NOT NULL,
+  PRIMARY KEY (id_prom));
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_veiculo (
+  chassi VARCHAR(45) NOT NULL,
+  id_prom INT NULL,
+  modelo VARCHAR(45) NOT NULL,
+  fabricante VARCHAR(45) NOT NULL,
+  cor VARCHAR(45) NOT NULL,
+  ano INT NOT NULL,
+  preco FLOAT NOT NULL,
+  PRIMARY KEY (chassi),
+  CONSTRAINT id_prom
+    FOREIGN KEY (id_prom)
+    REFERENCES public.tbl_promocao (id_prom)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE);
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_vendido (
+  chassi VARCHAR(45) NOT NULL,
+  id_prom INT NULL,
+  modelo VARCHAR(45) NOT NULL,
+  fabricante VARCHAR(45) NOT NULL,
+  cor VARCHAR(45) NOT NULL,
+  ano INT NOT NULL,
+  preco FLOAT NOT NULL,
+  PRIMARY KEY (chassi),
+  CONSTRAINT id_prom
+    FOREIGN KEY (id_prom)
+    REFERENCES public.tbl_promocao (id_prom)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE);
+
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_venda (
+  id_venda SERIAL NOT NULL,
+  id_fun INT NOT NULL,
+  id_cliente INT NOT NULL,
+  chassi VARCHAR(45) NOT NULL,
+  form_pag VARCHAR(45) NOT NULL,
+  serv_adi VARCHAR(45) NOT NULL,
+  valor_tot FLOAT NOT NULL,
+  desconto FLOAT NOT NULL,
+  data DATE NOT NULL,
+  status VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_venda),
+  CONSTRAINT id_cliente
+    FOREIGN KEY (id_cliente)
+    REFERENCES public.tbl_cliente (id_cliente)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE,
+  CONSTRAINT chassi
+    FOREIGN KEY (chassi)
+    REFERENCES public.tbl_vendido (chassi)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE,
+  CONSTRAINT id_fun
+    FOREIGN KEY (id_fun)
+    REFERENCES public.tbl_funcionario (id_fun)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE);
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.tbl_comissao (
+  id_comissao SERIAL NOT NULL,
+  id_venda INT NOT NULL,
+  porcentagem FLOAT NOT NULL,
+  PRIMARY KEY (id_comissao),
+  CONSTRAINT id_venda
+    FOREIGN KEY (id_venda)
+    REFERENCES public.tbl_venda (id_venda)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE);
+
+
